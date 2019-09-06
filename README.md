@@ -9,8 +9,8 @@ Still a work in progress as some features are being added.
 Project needs python3 and pip preinstalled.
 
 ```
-$ git clone {this repo}
-$ cd {this repo}
+$ git clone https://github.com/SowmyaAji/Pix-n-I.git
+$ cd https://github.com/SowmyaAji/Pix-n-I.git
 $ pipenv shell
 $ cd pixnme
 $ python manage.py runserver
