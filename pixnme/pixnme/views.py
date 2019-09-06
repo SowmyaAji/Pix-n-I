@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.base import View
 from django.views.generic import DeleteView
 from database.models import Post, Like
 from django.http import HttpResponseRedirect
+from database.forms import UpdatePostForm
 
 
 class HomePage(View):
@@ -39,11 +40,22 @@ def post_remove(request, pk):
     return HttpResponseRedirect("/")
 
 
-# def post_edit(request, pk):
-#     post = get_object_or_404(Post, pk=pk)
-#     name = request.POST.get("name")
-#     url = request.POST.get("imgURL")
-#     caption = request.POST.get("caption")
-#     post = Post(imgURL=url, caption=caption, postedBy=name)
-#     post.save()
-#     return HttpResponseRedirect("/", pk=post.pk)
+def edit_post(request, pk):
+
+    post = Post.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        form = UpdatePostForm(
+            data=request.POST, files=request.FILES, instance=post)
+
+        if form.is_valid():
+            form.save()
+            return redirect('/', pk=post.pk)
+
+    else:
+        form = UpdatePostForm(instance=post)
+
+    return render(request, 'edit_post.html', {
+        'post': post,
+        'form': form,
+    })

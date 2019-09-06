@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pixnme.views import HomePage, PostPage, CreatePost, post_remove
-# , post_edit
+from pixnme.views import HomePage, PostPage, CreatePost, post_remove, edit_post
 
 
 urlpatterns = [
@@ -27,4 +26,5 @@ urlpatterns = [
     path('/createPost', CreatePost.as_view(), name="createPost"),
     path('post/<pk>/remove/', post_remove, name='post_remove'),
     # path('post/<pk>/edit/', post_edit, name='post_edit'),
+    path('post/<pk>/edit/', edit_post, name='edit_post'),
 ]

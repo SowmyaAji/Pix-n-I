@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PixAndMe</title>
+    <title>Pix-n-I</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}
 
@@ -21,41 +21,41 @@
     </div>
   </div><!-- /.container-fluid -->
 </nav>
-    <h1 id="page-title">PixAndMe</h1>
+    <h1 id="page-title">Pix-n-I</h1>
     <p>
-        Add your pictures with their stories here!
+        Add your pictures with their stories to this PixLib :)
     </p>
 
-    {% comment %} <h3>Why you should register for InstaClone now!</h3>
+    <h3>Why you should use PixLib!</h3>
     <div class="container">
         <div class= "row">
             <div class="col-md-4 col-xs-12">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Reason 1: You love Instagram</div>
+                    <div class="panel-heading">You Enjoy Pix</div>
                     <div class="panel-body">
-                        If you love Instagram then you're going to love us. It's a no brainer.
+                       For you, the thrill of taking pix is only matched by keeping them!
                     </div>
                 
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Reason 2: We are free!</div>
+                    <div class="panel-heading">Your want to share</div>
                     <div class="panel-body">
-                        You might say, "Instagram is free too!" If you said that then you would be right.
+                        Every friend of yours just needs to see all these pix you took!
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Reason 3: We love the environment</div>
+                    <div class="panel-heading">You need them, like now.</div>
                     <div class="panel-body">
-                        It's true. The environment is great.
+                        These collections are always there for you whenever you want them!
                     </div>
                 </div>
             </div>
         </div>
-    </div> {% endcomment %}
+    </div> 
     <div class="container">
     <div class="row">
        <form action= {% url 'createPost' %} method="POST">{% csrf_token %} 
