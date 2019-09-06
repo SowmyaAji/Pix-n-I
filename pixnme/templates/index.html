@@ -1,0 +1,104 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PixAndMe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}
+
+</head
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/">PicStories</a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+    <h1 id="page-title">PixAndMe</h1>
+    <p>
+        Add your pictures with their stories here!
+    </p>
+
+    {% comment %} <h3>Why you should register for InstaClone now!</h3>
+    <div class="container">
+        <div class= "row">
+            <div class="col-md-4 col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Reason 1: You love Instagram</div>
+                    <div class="panel-body">
+                        If you love Instagram then you're going to love us. It's a no brainer.
+                    </div>
+                
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Reason 2: We are free!</div>
+                    <div class="panel-body">
+                        You might say, "Instagram is free too!" If you said that then you would be right.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Reason 3: We love the environment</div>
+                    <div class="panel-body">
+                        It's true. The environment is great.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    <div class="container">
+    <div class="row">
+       <form action= {% url 'createPost' %} method="POST">{% csrf_token %} 
+        <div class="form-group">
+          <label>Image URL</label>
+          <input name="imgURL" type="text" class="form-control" placeholder="Your image url!">
+        </div>
+        <div class="form-group">
+          <label>Name</label>
+          <input name="name" type="text" class="form-control" placeholder="Add your name!">
+        </div>
+        <div class="form-group">
+          <label>Caption</label>
+          <input name="caption" type="text" class="form-control" placeholder="What does this picture say?">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+</div>
+   <div class="container">
+    <div class="row">
+        {% for post in posts%}
+            <div class="col-md-4">
+                <a href="/{{ post.id }}">
+                <div class="image-post">
+                    <div class="image-area">
+                        <img class="image" src="{{ post.imgURL }}">
+                        </div>
+                    <div class="caption-text">
+                        {{ post.caption }}
+                    </div>
+                    <div class="postedby-text">
+                        Posted by {{ post.postedBy }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    </body>
+</body>
+
+</html>
