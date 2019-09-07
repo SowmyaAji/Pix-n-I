@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from dotenv load_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third part apps
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +77,7 @@ TEMPLATES = [
         },
     },
 ]
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 WSGI_APPLICATION = 'pixnme.wsgi.application'
 
 
