@@ -10,7 +10,7 @@ Project needs python3 and pip preinstalled.
 
 ```
 $ git clone https://github.com/SowmyaAji/Pix-n-I.git
-$ cd https://github.com/SowmyaAji/Pix-n-I.git
+$ cd Pix-n-I.git
 $ pipenv shell
 $ cd pixnme
 $ python manage.py runserver
