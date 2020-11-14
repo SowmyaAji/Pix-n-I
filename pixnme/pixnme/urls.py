@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePage.as_view()),
     path('<postID>', PostPage.as_view()),
-    path('/createPost', CreatePost.as_view(), name="createPost"),
+    path('createPost', CreatePost.as_view(), name="createPost"),
     path('post/<pk>/remove/', post_remove, name='post_remove'),
     # path('post/<pk>/edit/', post_edit, name='post_edit'),
     path('post/<pk>/edit/', edit_post, name='edit_post'),
