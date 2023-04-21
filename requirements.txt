@@ -2,7 +2,7 @@ Django==2.1
 django-crispy-forms==1.7.2
 python-dotenv==0.10.3
 pytz==2019.2
-sqlparse==0.3.0
+sqlparse==0.4.4
 gunicorn==19.5.0
 psycopg2-binary==2.8.5
 whitenoise
